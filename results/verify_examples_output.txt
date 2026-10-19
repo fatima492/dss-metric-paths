@@ -1,0 +1,91 @@
+
+== Proposition 4.4: union normalisation violates the triangle inequality ==
+[OK] m=2, alpha=0.3: d(S,H): 0.85  (expected 0.8499999999999999)
+[OK] m=2, alpha=0.3: d(S,G): 0.15  (expected 0.15)
+[OK] m=2, alpha=0.3: d(G,H): 0.65  (expected 0.6499999999999999)
+[OK] m=3, alpha=0.3: d(S,H): 0.8  (expected 0.8)
+[OK] m=3, alpha=0.3: d(S,G): 0.1  (expected 0.09999999999999999)
+[OK] m=3, alpha=0.3: d(G,H): 0.55  (expected 0.5499999999999999)
+[OK] m=5, alpha=0.3: d(S,H): 0.76  (expected 0.76)
+[OK] m=5, alpha=0.3: d(S,G): 0.06  (expected 0.06)
+[OK] m=5, alpha=0.3: d(G,H): 0.47  (expected 0.47)
+[OK] m=10, alpha=0.3: d(S,H): 0.73  (expected 0.73)
+[OK] m=10, alpha=0.3: d(S,G): 0.03  (expected 0.03)
+[OK] m=10, alpha=0.3: d(G,H): 0.41  (expected 0.41)
+[OK] m=50, alpha=0.3: d(S,H): 0.706  (expected 0.706)
+[OK] m=50, alpha=0.3: d(S,G): 0.006  (expected 0.006)
+[OK] m=50, alpha=0.3: d(G,H): 0.362  (expected 0.362)
+violation iff alpha < m/(m+4) for m in {2, 3, 5, 10, 50}: confirmed
+[OK] alpha=1/2, m=5: d(S,H): 0.6  (expected 0.6)
+[OK] alpha=1/2, m=5: d(S,G) + d(G,H): 0.55  (expected 0.55)
+
+== Theorem 4.2: exhaustive metric check for the fixed-coordinate distance ==
+number of crisp snapshots: 25 (expected (1+2^n)^m = 25 )
+[OK] alpha=0.050 max triangle excess <= 0: 1.110223025e-16  (expected 0)
+[OK] alpha=0.050 minimum positive gap: 0.025  (expected 0.025)
+[OK] alpha=0.333 max triangle excess <= 0: 1.110223025e-16  (expected 0)
+[OK] alpha=0.333 minimum positive gap: 0.1666666667  (expected 0.16666666666666666)
+[OK] alpha=0.500 max triangle excess <= 0: 0  (expected 0)
+[OK] alpha=0.500 minimum positive gap: 0.125  (expected 0.125)
+[OK] alpha=0.900 max triangle excess <= 0: 1.110223025e-16  (expected 0)
+[OK] alpha=0.900 minimum positive gap: 0.025  (expected 0.024999999999999994)
+alpha=0.2: max ratio union 1.0000 (<=1), intersection 1.0000 (<=1), complement 5.0000 (<= 1/alpha = 5.0000)
+alpha=0.5: max ratio union 1.0000 (<=1), intersection 1.0000 (<=1), complement 2.0000 (<= 1/alpha = 2.0000)
+alpha=0.8: max ratio union 1.0000 (<=1), intersection 1.0000 (<=1), complement 1.2500 (<= 1/alpha = 1.2500)
+
+== Example 5.10: discontinuity taxonomy (|U|=3, |E|=4, alpha=1/2) ==
+[OK] j^-(1): 0.2083333333  (expected 0.20833333333333331)
+[OK] j^+(1): 0.1666666667  (expected 0.16666666666666666)
+[OK] V_0^2: 0.375  (expected 3/8)
+   exact: j^- = 5/24  j^+ = 1/6  V = 3/8
+
+== Example 8.1: synthetic ward-type table, alpha = 1/2 ==
+   step (0, 1) act 0.0 deact 0.0 exp 1.0 con 1.0 P 0.0 Q 0.111111
+[OK]    d on (0, 1): 0.05555555556  (expected 1/18)
+   step (1, 2) act 1.0 deact 0.0 exp 1.0 con 0.0 P 0.333333 Q 0.055556
+[OK]    d on (1, 2): 0.1944444444  (expected 7/36)
+   step (2, 3) act 0.0 deact 0.0 exp 1.0 con 2.0 P 0.0 Q 0.166667
+[OK]    d on (2, 3): 0.08333333333  (expected 1/12)
+   step (3, 4) act 0.0 deact 0.0 exp 0.0 con 0.0 P 0.0 Q 0.0
+[OK]    d on (3, 4): 0  (expected 0)
+[OK] total sampled variation: 0.3333333333  (expected 1/3)
+   time-average activation degrees: [1.  1.  0.5]
+   time-average memberships:
+ [[1.   0.75 0.25 0.   0.   0.  ]
+ [0.   0.   0.   0.75 1.   0.75]
+ [0.   0.   0.5  0.25 0.   0.  ]]
+[OK] avg w(e3): 0.5  (expected 0.5)
+[OK] avg mu(e1,u1): 1  (expected 1.0)
+[OK] avg mu(e1,u2): 0.75  (expected 0.75)
+[OK] avg mu(e1,u3): 0.25  (expected 0.25)
+[OK] avg mu(e2,u4): 0.75  (expected 0.75)
+[OK] avg mu(e2,u6): 0.75  (expected 0.75)
+[OK] avg mu(e3,u3): 0.5  (expected 0.5)
+[OK] avg mu(e3,u4): 0.25  (expected 0.25)
+   admissible: True
+
+== Example 8.2: synthetic asset-type table, alpha = 1/2 ==
+[OK]    d on (0, 1): 0.05  (expected 1/20)
+[OK]    d on (1, 2): 0.15  (expected 3/20)
+[OK]    d on (2, 3): 0.075  (expected 3/40)
+[OK]    d on (3, 4): 0  (expected 0)
+[OK] total: 0.275  (expected 11/40)
+   total = 11/40
+
+== Examples 6.18 and 6.19: graded trajectory and chain rule, |U|=|E|=2, alpha=1/2 ==
+   admissible on [0,1]: True
+[OK]    metric speed at t=0.1: 0.462500125  (expected 0.4625)
+[OK]    metric speed at t=0.25: 0.500000125  (expected 0.5)
+[OK]    metric speed at t=0.5: 0.562500125  (expected 0.5625)
+[OK]    metric speed at t=0.9: 0.662500125  (expected 0.6625)
+[OK]    length on [0,1]: 0.5625  (expected 0.5625)
+[OK]    D(S_0,S_1): 0.5625  (expected 0.5625)
+[OK]    speed of S o phi at s=0.500: 0.5000000623  (expected 0.5)
+[OK]    speed of S o phi at s=1.000: 1.374997743  (expected 1.3749976250015)
+[OK]    layer-cake (coarse quadrature): 0.2875  (expected 0.28750000000000003)
+[OK]    layer-cake (exact): 0.2875  (expected 0.28750000000000003)
+
+== Example 6.20: graded sandwich ==
+   ordering and admissibility hold on a 1e5-point grid of [-1,1]: True
+
+ALL CHECKS PASSED

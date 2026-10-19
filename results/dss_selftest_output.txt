@@ -1,0 +1,8 @@
+[OK] d(X0, X1) = 1/18
+[OK] d(X1, X2) = 7/36
+[OK] sampled variation = 1/4
+[OK] parts recombine to d
+[OK] complement is an isometry on a fixed active set
+[OK] time average is admissible
+[OK] level snapshot at theta=1 of a crisp snapshot is itself
+d(X0,X1) = 1/18  d(X1,X2) = 7/36
